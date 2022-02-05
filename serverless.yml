@@ -1,0 +1,15 @@
+org: educweb
+app: edrego
+service: test
+frameworkVersion: '2'
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: us-west-2
+functions:
+  api:
+    handler: api/index.apiHandler
+    events:
+    - http:
+        path: /api/purchases
+        method: get
